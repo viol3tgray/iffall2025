@@ -1,0 +1,44 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Helvetica, Arial, sans-serif;  /* Helvetica first */
+    font-size: 16px;
+    line-height: 1.6;
+    background: linear-gradient(to bottom right, #ffb347, #ffcc33); /* orange ombré */
+    color: #000000; /* black text */
+    text-align: center; /* center all text */
+    padding: 2rem;
+  }
+  
+  /* Container keeps content narrower */
+  .container {
+    max-width: 70ch;
+    margin: 0 auto;
+  }
+  
+  /* Title + metadata */
+  .song-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .song-meta {
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+  
+  /* Lyrics sections */
+  article.lyrics {
+    background: rgba(255, 255, 255, 0.5); /* light overlay for readability */
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: inline-block; /* shrink-wrap to content */
+  }
+  
+  .lyric-section {
+    margin: 1.5rem 0;
+  }
