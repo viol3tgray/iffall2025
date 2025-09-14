@@ -1,0 +1,137 @@
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #2a1c24; 
+  background: #fffaf2; 
+}
+
+:root {
+  --butter: #fff3c4;   
+  --pink: #ff6fa9;      
+  --pink-dark: #e35e96;  
+}
+
+.wrap { padding: 16px; }
+header, footer { padding: 16px; }
+
+.page-header {
+  background: var(--butter);
+  border-bottom: 4px solid var(--pink);
+  text-align: center;
+}
+.page-header h1 { margin: 0; font-size: 28px; }
+.tagline { margin: 6px 0 0; color: #5a3b47; }
+
+.page-footer {
+  background: var(--butter);
+  border-top: 4px solid var(--pink);
+  text-align: center;
+  color: #5a3b47;
+}
+
+.two-col {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 12px;
+}
+.panel {
+  background: #fff;
+  border: 2px solid var(--pink);
+  border-radius: 8px;
+  padding: 12px;
+}
+.two-col aside { flex: 1; }   
+.two-col article { flex: 2; } 
+
+h2 {
+  margin: 0 0 10px 0;
+  border-left: 6px solid var(--pink);
+  padding-left: 8px;
+  color: #2a1c24;
+}
+h3 { margin: 12px 0 6px 0; }
+
+ul, ol { margin: 8px 0 12px 18px; }
+li + li { margin-top: 4px; }
+ol li {
+    margin-bottom: 12px;
+  }
+
+.tip {
+    font-style: italic;
+    margin: 10px 0;
+  }
+  
+
+@media (max-width: 800px) {
+  .two-col { flex-direction: column; }
+}
+
+.gallery {
+    padding: 16px;
+    margin-top: 20px;
+  }
+  
+  .gallery h2 {
+    border-left: 6px solid var(--pink);
+    padding-left: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  
+  .gallery figure {
+    background: #fff;
+    border: 2px solid var(--pink);
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  
+  .gallery figcaption {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #5a3b47;
+  }
+.references {
+    padding: 16px;
+    margin-top: 20px;
+  }
+  
+  .references h2 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 20px;
+  }
+  
+  .references ul {
+    margin: 0 0 16px 20px;
+    padding: 0;
+  }
+  
+  .references li {
+    margin-bottom: 10px;
+  }
+  
+  .references a {
+    font-weight: bold;
+    color: #333;
+  }
+  .references a:hover {
+    color: var(--pink-dark);
+  }
+  
