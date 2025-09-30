@@ -1,0 +1,15 @@
+img{
+    width:50%;
+    display:block;
+    margin:auto;
+    padding-bottom:4rem;
+}
+
+body{
+    padding: 1rem 15% 3rem 15%;
+    text-align: center;
+}
+
+h1{
+    padding-bottom:4rem;
+}
