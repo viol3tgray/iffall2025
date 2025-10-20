@@ -1,0 +1,44 @@
+/* ===== Base Styles ===== */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #222; background: #ffe8f4; }
+img { max-width: 100%; height: auto; display: block; border: none; }
+
+.wrap { width: 90%; max-width: 1000px; margin: 0 auto; }
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 30px 0;
+}
+.intro-left,
+.intro-right {
+  background: pink;
+  padding: 30px;
+}
+.intro-left h2 { font-size: 32px; margin: 0 0 8px; }
+.byline { color: #333; font-size: 14px; margin: 0 0 10px; }
+.intro-left p { margin: 0; }
+
+.meta { list-style: none; padding: 0; margin: 0; }
+.meta li { margin: 6px 0; font-size: 14px; }
+
+.prep { display: block; padding: 30px 0; border-bottom: 3px dotted pink; }
+.panel { padding: 0; margin-bottom: 20px; }
+.panel h3 { margin-top: 0; }
+.panel ul { margin: 0; padding-left: 18px; }
+.panel li { margin: 8px 0; }
+
+.steps { padding: 16px 0; border-bottom: 3px dotted pink; }
+.steps h3 { margin: 0 0 12px; font-size: 22px; }
+.steps ol { padding-left: 18px; }
+.steps li { margin: 12px 0; }
+
+footer { color: #555; text-align: center; padding: 18px 0 28px; font-size: 14px; }
+
+@media (max-width: 700px) {
+  .intro { grid-template-columns: 1fr; }
+  .intro-left,
+  .intro-right { text-align: left; }
+  .gallery figure { width: 100%; max-width: 100%; }
+}
