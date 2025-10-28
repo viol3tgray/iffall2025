@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Buttons - Katherine Feng</title>
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+   
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+	body { color: #333; font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; }
+	main { margin: 40px; }
+	h1 { font-size: 30px; margin-bottom: 40px; }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+	.button_container {
+		border: 1px solid #ddd;
+		margin: 0 10px 10px 0;
+		padding: 20px;
+		width: 300px;
+		height: 300px;
+		float: left;
+		overflow: hidden;
+		box-sizing: border-box;
+		text-align: center;
+        display: flex; justify-content: center; align-items: center;
+	}
+
+    #btn-apple{ position: relative; width: 120px; height: 120px; display: inline-block; }
+    #btn-apple img.base,
+    #btn-apple img.hover{
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 84px; border-radius: 12px;
+        transition: box-shadow .25s ease, transform .25s ease;
+    }
+    #btn-apple img.hover{ clip-path: inset(0 0 100% 0); transition: clip-path .6s ease; pointer-events: none; }
+    #btn-apple:hover img.hover{ clip-path: inset(0 0 0 0); }
+    #btn-apple:active img.base, #btn-apple:active img.hover{
+        box-shadow: 0 0 25px 8px rgba(160,32,240,.6); transform: translate(-50%,-50%) scale(1.06);
+    }
+
+    #btn-nike{ width: 100px; height: 100px; position: relative; }
+    #btn-nike img{ width: 80%; object-fit: contain; transition: opacity .5s ease, transform .3s ease;
+        position: absolute; top:50%; left:50%; transform: translate(-50%,-50%); }
+    #btn-nike img.default{ opacity: 1; } #btn-nike img.hover{ opacity: 0; }
+    #btn-nike:hover img.default{ opacity: 0; }
+    #btn-nike:hover img.hover{ opacity: 1; transform: translate(-50%,-50%) scale(1.1); }
+
+    #btn-npr{ width: 160px; height: auto; position: relative; }
+    #btn-npr img{ width: 100%; transition: opacity .6s ease; position: absolute; top:50%; left:50%; transform: translate(-50%,-50%); }
+    #btn-npr img.default{ opacity: 1; } #btn-npr img.hover{ opacity: 0; }
+    #btn-npr:hover img.default{ opacity: 0; } #btn-npr:hover img.hover{ opacity: 1; }
+
+    #btn-craigslist{
+        width: 180px; height: 180px; border-radius: 50%;
+        display: inline-flex; align-items:center; justify-content:center;
+    }
+    #btn-craigslist img{ width: 140px; transition: transform .6s ease; }
+    #btn-craigslist:hover img{ transform: rotate(360deg); }
+
+    #btn-newyorker{ position: relative; width: 220px; height: 220px; display:inline-block; }
+    #btn-newyorker img{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+        max-width: 220px; width: 100%; height: auto; border-radius: 8px; }
+    #btn-newyorker img.default{ opacity:1; transition: opacity .5s ease; }
+    #btn-newyorker img.hover{ opacity:0; transition: opacity .5s ease; }
+    #btn-newyorker:hover img.default{ opacity:0; }
+    #btn-newyorker:hover img.hover{ opacity:1; }
+
+    #btn-instagram{
+        width: 200px; height: 200px; position: relative; display:inline-block;
+    }
+    #btn-instagram img{ position:absolute; top:50%; left:50%; transform: translate(-50%,-50%);
+        width: 160px; transition: opacity .35s ease; }
+    #btn-instagram img.default{ opacity: 1; }
+    #btn-instagram img.hover{ opacity: 0; }
+    #btn-instagram:hover img.default{ opacity: 0; }
+    #btn-instagram:hover img.hover{ opacity: 1; animation: shakeX .45s ease-in-out infinite; }
+    @keyframes shakeX{
+      0%, 100% { transform: translate(-50%,-50%) translateX(0); }
+      25% { transform: translate(-50%,-50%) translateX(-6px); }
+      50% { transform: translate(-50%,-50%) translateX(6px); }
+      75% { transform: translate(-50%,-50%) translateX(-6px); }
+    }
+
+    #btn-facebook{
+        width: 160px; height: 160px; border-radius: 24px; background: #f4f7ff;
+        display:inline-flex; align-items:center; justify-content:center;
+        box-shadow: 0 10px 24px rgba(8,102,255,.12);
+        transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    #btn-facebook img{ width: 90px; transition: transform .25s ease; }
+    #btn-facebook:hover{ transform: translateY(-3px); box-shadow: 0 16px 34px rgba(8,102,255,.18); }
+    #btn-facebook:hover img{ transform: scale(1.06); }
+
+    #btn-mbg{
+        position: relative;
+        display:inline-flex; align-items:center; justify-content:center;
+        min-width: 280px; min-height: 90px;
+        padding: 8px 12px;
+        background: transparent; color:#2E5B2B;
+        font-family:'Ubuntu',sans-serif; font-weight:700; letter-spacing:.04em;
+        overflow: hidden; 
+    }
+
+    #btn-mbg .label{
+        position: relative; z-index: 1;
+        transition: opacity .35s ease, transform .35s ease;
+        white-space: nowrap;
+    }
+
+    #btn-mbg img.sprout{
+        position: absolute; top: 50%; left: -220px;
+        transform: translateY(-50%);
+        width: 180px; opacity: 0;
+        transition: left .6s ease, opacity .6s ease, transform .6s ease;
+        pointer-events: none;
+    }
+    #btn-mbg:hover .label{ opacity: 0; transform: translateX(20px); }
+    #btn-mbg:hover img.sprout{
+        left: 50%; transform: translate(-50%, -50%); opacity: 1;
+    }
+
+    #btn-bissingers{
+        position: relative; display:inline-flex; align-items:center; justify-content:center;
+        min-width: 240px; min-height: 80px; background: transparent; border-radius: 0;
+        color:#2b1a12; text-transform: uppercase; letter-spacing:.06em;
+        font-family:'Cinzel', serif; font-weight: 700; font-size: 28px;
+    }
+    #btn-bissingers .choco{
+        position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(1.02);
+        width: 160px; opacity: 0; transition: opacity .45s ease, transform .45s ease; pointer-events:none;
+    }
+    #btn-bissingers:hover .choco{ opacity:1; transform:translate(-50%,-50%) scale(1.08); }
+
+    #btn-pastaria{
+        position: relative; width: 240px; height: 140px;
+        display:inline-flex; align-items:center; justify-content:center;
+        border-radius: 12px; background: transparent; border: 2px solid #ff7a00;
+        overflow: hidden; font-family: 'Montserrat', sans-serif;
+        transition: transform .2s ease, border-color .2s ease;
+    }
+    #btn-pastaria img.logo{
+        position:absolute; top:50%; left:50%; transform: translate(-50%,-50%);
+        width: 220px; transition: opacity .35s ease, transform .35s ease;
+    }
+    #btn-pastaria .menu{
+        position:absolute; top:50%; left:50%; transform: translate(-50%,-50%) scale(.95);
+        font-weight: 800; letter-spacing: .12em; color: #ff7a00;
+        font-size: 28px; opacity: 0; transition: opacity .35s ease, transform .35s ease;
+    }
+    #btn-pastaria:hover img.logo{ opacity: .08; transform: translate(-50%,-50%) scale(1.04); }
+    #btn-pastaria:hover .menu{ opacity: 1; transform: translate(-50%,-50%) scale(1); }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Button Styling - Violet Holah</h1>
+
+        <div class="button_container">
+            <a id="btn-apple" href="https://apple.com" target="_blank">
+                <img class="base" src="https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png" alt="Apple Logo">
+                <img class="hover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Apple_Computer_Logo_rainbow.svg/880px-Apple_Computer_Logo_rainbow.svg.png" alt="Apple Rainbow Logo">
+            </a>
+        </div>
+
+        <div class="button_container">
+            <a id="btn-nike" href="https://nike.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike Logo" class="default">
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/nike-2-logo-black-and-white.png" alt="Nike Alternate Logo" class="hover">
+            </a>
+        </div>
+
+        <div class="button_container">
+            <a id="btn-npr" href="https://npr.org" target="_blank">
+                <img src="https://1000logos.net/wp-content/uploads/2021/05/NPR-logo.png" alt="NPR Logo" class="default">
+                <img src="https://logos-world.net/wp-content/uploads/2023/02/NPR-Emblem.png" alt="NPR Hover Logo" class="hover">
+            </a>
+        </div>
+
+        <div class="button_container">
+            <a id="btn-craigslist" href="http://stlouis.craigslist.org/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Craigslist_icon.svg/2048px-Craigslist_icon.svg.png" alt="Craigslist St. Louis">
+            </a>
+        </div>
+
+        <div class="button_container">
+            <a id="btn-newyorker" href="http://www.newyorker.com/" target="_blank">
+                <img class="default" src="https://store.newyorker.com/cdn/shop/products/Magazine-HP-2.png?v=1605827684&width=2000" alt="The New Yorker (magazine)">
+                <img class="hover" src="https://miro.medium.com/1*F3jvHGb8liPxdPJsKkmgjQ.gif" alt="The New Yorker (hover GIF)">
+            </a>
+        </div>
+
+        <div class="button_container">
+            <a id="btn-instagram" href="https://www.instagram.com/" target="_blank">
+                <img class="default" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png" alt="Instagram 2016 logo">
+                <img class="hover" src="https://www.iconpacks.net/icons/2/free-instagram-like-icon-3507-thumb.png" alt="Instagram like/heart">
+            </a>
+        </div>
+
+        <div class="button_container">
+            <a id="btn-facebook" href="https://www.facebook.com/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png" alt="Facebook Icon">
+            </a>
+        </div>
+
+        <div class="button_container">
+            <a id="btn-mbg" href="http://www.missouribotanicalgarden.org/" target="_blank">
+                <span class="label">MISSOURI BOTANICAL GARDEN</span>
+                <img class="sprout" src="https://www.mobot.org/tnewtemp/prodtemp/img/headerlogo.png" alt="MOBOT Logo">
+            </a>
+        </div>
+
+        <div class="button_container">
+            <a id="btn-bissingers" href="http://www.bissingers.com/" target="_blank">
+                BISSINGER’S
+                <img class="choco" src="https://static.vecteezy.com/system/resources/previews/040/191/878/non_2x/ai-generated-chocolate-candy-clip-art-free-png.png" alt="Chocolate">
+            </a>
+        </div>
+
+        <div class="button_container">
+            <a id="btn-pastaria" href="https://pastariadeliandwine.com" target="_blank">
+                <img class="logo" src="https://bloximages.newyork1.vip.townnews.com/feastmagazine.com/content/tncms/assets/v3/editorial/f/62/f621d808-0259-11eb-b582-3b8b87816639/5f733a8236d38.image.png?resize=916%2C500" alt="Pastaria Deli & Wine">
+                <span class="menu">MENU</span>
+            </a>
+        </div>
+
+    </main>
+</body>
+</html>
